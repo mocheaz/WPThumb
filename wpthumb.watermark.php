@@ -42,12 +42,16 @@ class WP_Thumb_Watermark {
 
 		if ( strpos( $this->args['position'], 'left' ) !== false )
 			$left = $this->args['padding'];
+		else if ( strpos( $this->args['position'], 'center' ) !== false )
+			$left = ($size['width'] / 2) - ($mask_width / 2);
 		else
 			$left = $size['width'] - $mask_width - $this->args['padding'];
 
 
 		if ( strpos( $this->args['position'], 'top' ) !== false )
 			$top = $this->args['padding'];
+		else  if ( strpos( $this->args['position'], 'center' ) !== false )
+			$top = ($size['height'] / 2) - ($mask_height / 2);
 		else
 			$top = $size['height'] - $mask_height - $this->args['padding'];
 
